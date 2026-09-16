@@ -1,4 +1,4 @@
-# Copyright 1999-2026 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -46,7 +46,7 @@ src_prepare() {
 	default
 
 	# Use custom meson.build and meson_options.txt to install instead of relay on packages
-	cp "${FILESDIR}/${PN}-meson-r1.build" "${S}/meson.build" || die
+	cp "${FILESDIR}/${PN}-meson.build" "${S}/meson.build" || die
 	cp "${FILESDIR}/${PN}-meson_options.txt" "${S}/meson_options.txt" || die
 	sed -i "s/  version: 'PV',/  version: '${PV}',/g" "${S}/meson.build" || die
 }
